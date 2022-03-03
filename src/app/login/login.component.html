@@ -1,0 +1,25 @@
+<form [formGroup]="FormLg" (ngSubmit)="login()">
+<h3>Login</h3>
+    <div>
+        <label>Email</label>
+        <input type="text" formControlName="correo">
+
+    </div>
+
+    <div *ngIf="FormLg.get('correo')?.errors && FormLg.get('correo')?.dirty">
+        
+        <p *ngIf="FormLg.get('correo')?.hasError('email')">Debe usar una dirección de correo valida "@"</p>
+    
+        </div>
+
+    <div>
+        <label>Contraseña</label>
+        <input type="password" formControlName="clave">                
+    </div>
+
+    <div *ngIf="FormLg.get('clave')?.errors && FormLg.get('clave')?.dirty">
+        <p *ngIf="FormLg.get('clave')?.hasError('required')">Este campo es obligatorio</p>
+    </div>
+    <button type="submit" [disabled]="FormLg.invalid">Registrarse</button>
+
+</form>

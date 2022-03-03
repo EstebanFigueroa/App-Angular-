@@ -1,0 +1,54 @@
+<!--Aca tenemos que bindear el formulario con su parte logica -->
+<h3>Registro</h3>
+<form [formGroup]="miFormulario" (ngSubmit)="registro()">
+    <div>
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre"> <!--Con "formControlName" relaciono los campos logicos del formulario con su html -->
+    </div>
+    <div *ngIf="miFormulario.get('nombre')?.errors && miFormulario.get('nombre')?.dirty">
+        
+        <p *ngIf="miFormulario.get('nombre')?.hasError('required')">Este campo es obligatorio</p>
+    
+        </div>
+
+        <div>
+            <label>Apellido</label>
+            <input type="text" formControlName="apellido"> <!--Con "formControlName" relaciono los campos logicos del formulario con su html -->
+        </div>
+        <div *ngIf="miFormulario.get('apellido')?.errors && miFormulario.get('apellido')?.dirty">
+            
+            <p *ngIf="miFormulario.get('apellido')?.hasError('required')">Este campo es obligatorio</p>
+        
+            </div>
+
+            <div>
+                <label>Teléfono</label>
+                <input type="text" formControlName="telefono"> <!--Con "formControlName" relaciono los campos logicos del formulario con su html -->
+            </div>
+
+    <div>
+        <label>Email</label>
+        <input type="text" formControlName="correo" >
+    </div>
+
+    <div *ngIf="miFormulario.get('correo')?.errors && miFormulario.get('correo')?.dirty">
+        
+        <p *ngIf="miFormulario.get('correo')?.hasError('email')">Debe usar una dirección de correo valida "@"</p>
+    
+        </div>
+
+    <div>
+        <label>Contraseña</label>
+        <input type="password" formControlName="clave">
+    </div>
+    
+
+    <div *ngIf="miFormulario.get('clave')?.errors && miFormulario.get('clave')?.dirty">
+        <!--A este div lo vamos a colocar en el DOM con *ngIf. El signo de pregunta en errors evita un undefined hacia la izquierda (Es un operador javascript-->
+        <p *ngIf="miFormulario.get('clave')?.hasError('required')">Este campo es obligatorio</p>
+        <p *ngIf="miFormulario.get('clave')?.hasError('minlength')">Debe tener al menos 6 caracteres</p>
+        <p *ngIf="miFormulario.get('clave')?.hasError('maxlength')">No puede tener mas de 10 caracteres</p>
+
+        </div>
+    <button type="submit" [disabled]="miFormulario.invalid">Registrarse</button>
+</form>
