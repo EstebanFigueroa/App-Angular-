@@ -1,6 +1,6 @@
 //Un servicio va a ser una clase en la cual vamos a poder definir metodos
 
-import { Injectable } from '@angular/core';
+import { getNgModuleById, Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -15,5 +15,10 @@ export class ProductosService {
 
     return this.servidor.get("https://api.mercadolibre.com/sites/MLA/search?q=motos")
   }
+  getById(id:string){
+    return this.servidor.get("https://api.mercadolibre.com/items/"+id)
+
+  }
+
 }
- 
+

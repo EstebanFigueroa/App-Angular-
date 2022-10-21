@@ -1,25 +1,31 @@
-<form [formGroup]="FormLg" (ngSubmit)="login()">
-<h3>Login</h3>
-    <div>
-        <label>Email</label>
-        <input type="text" formControlName="correo">
+<div class="login">
 
-    </div>
+    <div class="caja_log">
+        <form [formGroup]="FormLg" (ngSubmit)="login()" class="log_form">
+                <h3 class="log">Login</h3>
 
-    <div *ngIf="FormLg.get('correo')?.errors && FormLg.get('correo')?.dirty">
-        
-        <p *ngIf="FormLg.get('correo')?.hasError('email')">Debe usar una dirección de correo valida "@"</p>
-    
-        </div>
+                   <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input  matInput placeholder type="text" formControlName="correo">
 
-    <div>
-        <label>Contraseña</label>
-        <input type="password" formControlName="clave">                
-    </div>
+                    </mat-form-field>
 
-    <div *ngIf="FormLg.get('clave')?.errors && FormLg.get('clave')?.dirty">
-        <p *ngIf="FormLg.get('clave')?.hasError('required')">Este campo es obligatorio</p>
-    </div>
-    <button type="submit" [disabled]="FormLg.invalid">Registrarse</button>
+                    <div *ngIf="FormLg.get('correo')?.errors && FormLg.get('correo')?.dirty">
+                        
+                        <p *ngIf="FormLg.get('correo')?.hasError('email')">Debe usar una dirección de correo valida "@"</p>
+                    
+                        </div>
 
-</form>
+                        <mat-form-field appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input  matInput placeholder type="password" formControlName="clave">                
+                    </mat-form-field>
+
+                    <div *ngIf="FormLg.get('clave')?.errors && FormLg.get('clave')?.dirty">
+                        <p *ngIf="FormLg.get('clave')?.hasError('required')">Este campo es obligatorio</p>
+                    </div>
+                    <button mat-raised-button color="accent" type="submit" [disabled]="FormLg.invalid">Registrarse</button>
+
+        </form>
+</div>
+</div>

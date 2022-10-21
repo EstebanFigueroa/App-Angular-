@@ -1,0 +1,17 @@
+.tarjeta{
+    margin: 20px;
+    padding-bottom: 10px;    
+}
+
+.tarjeta img{ 
+  max-width: 150px;
+}
+
+.avatar{
+
+    width:10px;
+    margin-top: 15px;
+    border-radius: 0;
+    border: 2px lightgrey;
+    
+}

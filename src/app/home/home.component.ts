@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductosService } from '../productos.service';
+
+
 
 @Component({
   selector: 'app-home',
@@ -8,9 +10,11 @@ import { ProductosService } from '../productos.service';
 })
 export class HomeComponent implements OnInit {
   productos:any=[]
+ 
 
   constructor( 
-    private listaProductos:ProductosService  //esta es una instancia de productos.service.ts *** Inyección de dependencias***
+    private listaProductos:ProductosService,  //esta es una instancia de productos.service.ts *** Inyección de dependencias***
+    
   ) { 
     this.listaProductos.getAll()
     .subscribe((datos:any)=> 
@@ -18,7 +22,11 @@ export class HomeComponent implements OnInit {
       if (datos.results)  
       this.productos=datos.results
       }
+      
       )//cuando tenga la informacion ejecuta la funcion (asincronismo)
+
+     
+     
 
   }
 

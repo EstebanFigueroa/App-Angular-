@@ -1,0 +1,19 @@
+
+
+<!--<div *ngIf="producto">
+
+        <p>{{producto.title}}</p> 
+        <p>{{producto.price | currency: "ARS"}}</p>
+        
+</div>-->
+
+<mat-card class="tarjeta">
+        <mat-card-header class="titulo">          
+          <mat-card-title>{{producto.title}}</mat-card-title>
+          <mat-card-subtitle>{{producto.price | currency: "ARS"}}</mat-card-subtitle>
+          <mat-card-subtitle>Cantidad disponible:{{producto.available_quantity}}</mat-card-subtitle>
+          <mat-card-subtitle>{{producto.home_image_url}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{producto.thumbnail}}>
+          
+      </mat-card>

@@ -1,0 +1,28 @@
+.registro{
+    padding: 20px;   
+    height:100%;
+    background: url(https://c8.alamy.com/comp/2C8NAHX/online-shopping-hand-drawn-seamless-pattern-doodle-e-commerce-background-vector-illustration-2C8NAHX.jpg); 
+}
+
+.formulario{
+    
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f2f2f2+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f2f2f2 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 0%,#f2f2f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+
+    width:250px;
+    padding: 20px 25px 20px 25px;
+    
+}
+.caja_reg{
+    box-shadow: 10px 10px 9px 0px  rgba(100, 100, 100, 0.541);
+    width:300px;    
+
+}
+
+.reg{
+    font-size:large; color:#ff4081; font-weight:500px; padding:10px; width:200px;       
+}

@@ -1,9 +1,28 @@
 
+<div class="home">
 
-<div *ngFor="let producto of productos">    
+   <mat-grid-list cols="4" rowHeight="2:1">
 
-   <p>{{producto.title}}</p>
-   <p>{{producto.price}}</p>
-    
-          
+         <div *ngFor="let producto of productos">    
+            
+            <mat-grid-tile>
+               <mat-card class="tarjeta_h">                 
+                  <mat-card-title class="tarjeta_t"><p>{{producto.title | slice:0:25}} </p></mat-card-title>
+                  <img src="{{producto.thumbnail}}">
+                  <mat-card-subtitle><p>{{producto.price | currency: "ARS"}}</p></mat-card-subtitle>               
+                  <button mat-raised-button color="accent" routerLink="/producto/{{producto.id}}">Ver Detalle</button>                           
+               </mat-card>
+            </mat-grid-tile>    
+            
+         </div>          
+   </mat-grid-list>
+
+         
+   
+         <mat-paginator [length]="100"
+                  [pageSize]="10"
+                  [pageSizeOptions]="[5, 10, 25, 100]"
+                  aria-label="Seleccione la pagina">
+         </mat-paginator>
 </div>
+

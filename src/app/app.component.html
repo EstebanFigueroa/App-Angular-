@@ -1,7 +1,13 @@
-<app-menu></app-menu>
-<router-outlet></router-outlet>
-<!--Estilos del Home-->
-<style>
+<mat-drawer-container class="Container">
+  <mat-drawer mode="side" opened><app-menu></app-menu></mat-drawer>
+  <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+<!--style>
     :host {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: 14px;
@@ -294,4 +300,4 @@
         visibility: hidden;
       }
     }
-  </style>
+  </style>-->
